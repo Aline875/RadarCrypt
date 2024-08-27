@@ -1,24 +1,21 @@
 import { FC } from "react";
 import Head from "next/head";
-import {FaSearch} from "react-icons/fa"
+import Header from "./components/Header";
 
 const Home: FC =()=>
 {
   return(
+  <div>
+    <Header></Header>
     <div className="flex items-center justify-center min-h-screen bg-custom-ligth">
-      <header className="flex items-center">
-        <nav className="bg-white">
-          <FaSearch className="text-font-color" />
-          <input type="search" name="pesquisa-nav" id="pesquisa-nav" className="" placeholder="Pesquisa"/>
-        </nav>
-      </header>
-      <main>
+      <main className="flex items-center ">
         <aside></aside>
-        <div>Dolar</div>
-        <div>Real</div>
-        <div>Cypto</div>
+        <div className="border rounded-lg bg-white">Dolar</div>
+        <div className="border rounded-lg bg-white">Real</div>
+        <div className="border rounded-lg bg-white">Cypto</div>
       </main>
     </div>
+  </div>
   )
 }
 export default Home;
