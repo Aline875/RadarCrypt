@@ -30,14 +30,20 @@ const Header: FC = () => {
 
         
         <nav className="flex space-x-4">
-          <Link href="/" className="text-gray-800 hover:text-black">
+          <Link href="/" className="text-font-color hover:text-custom-gray ">
            Home
           </Link>
-          <Link href="/about" className="text-gray-800 hover:text-black">
+          <Link href="/about" className="text-font-color hover:text-custom-gray">
             Sobre nós
           </Link>
-            <Link href="/contact" className="text-gray-800 hover:text-black">
+            <Link href="/contact" className="text-font-cololr hover:text-custom-gray">
             Contato
+            </Link>
+            <Link href="" className="text-font-color hover:text-custom-button">
+              Log in
+            </Link>
+            <Link href="/" className="text-font-color hover:text-custom-button">
+              Log Out
             </Link>
         </nav>
       </div>

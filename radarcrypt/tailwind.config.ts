@@ -16,8 +16,11 @@ const config: Config = {
 
       colors:
       {
-        'bg-custom-light':'#f1f5ff',
-        'text-font-color':'#171717'
+        'custom-light':'#f1f5ff',
+        'font-color':'#171717',
+        'custom-button':'#1c58f4',
+        'cusotm-gray':'#86878b'
+        
       }
     },
   },
