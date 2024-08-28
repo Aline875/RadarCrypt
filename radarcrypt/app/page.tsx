@@ -1,10 +1,9 @@
 // pages/index.tsx
 import { FC } from "react";
-import Head from "next/head";
-import Header from "./components/Header";
 import Graficos from "./components/Moedas";
 import Comparativo from "./components/Comparacao";
-
+import BarraLateral from "./components/BarraLateral";
+import Header from "./components/Header";
 const Home: FC = () => {
   const moedas = [
     { nome: 'Dolar', valor: '5.30', historico: [4.99, 5.25, 5.32, 5.35, 5.20] },
@@ -14,9 +13,14 @@ const Home: FC = () => {
 
   return (
     <div>
-      <Header />
       <div className="flex flex-col items-center justify-center min-h-screen bg-custom-light">
+        <div>
+          <Header/>
+        </div>
         <main className="flex flex-wrap justify-center gap-6">
+          <aside>
+            <BarraLateral/>
+          </aside>
           {moedas.map((moeda, index) => (
             <div key={index} className="border rounded-lg bg-white p-4 shadow-md w-80 text-center mt-4">
               <h2 className="text-xl font-semibold mb-2">{moeda.nome}</h2>

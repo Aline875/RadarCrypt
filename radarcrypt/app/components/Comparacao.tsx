@@ -25,9 +25,9 @@ interface ComparativoProps {
 const Comparativo: FC<ComparativoProps> = ({ moedas }) => {
   // Cores para as colunas
   const colors = [
-    'rgba(255, 99, 132, 0.8)', // Rosa
-    'rgba(54, 162, 235, 0.8)', // Azul
-    'rgba(153, 102, 255, 0.8)', // Roxo
+    'rgba(255, 99, 132, 0.8)', 
+    'rgba(54, 162, 235, 0.8)', 
+    'rgba(153, 102, 255, 0.8)', 
   ];
 
   // Preparando os dados para o gráfico
@@ -41,7 +41,7 @@ const Comparativo: FC<ComparativoProps> = ({ moedas }) => {
       backgroundColor: colors[index % colors.length], // Usar cores do array
       borderColor: 'rgba(0, 0, 0, 0.1)',
       borderWidth: 1,
-      borderRadius: 8, // Arredondamento das colunas
+      borderRadius: 10, // Arredondamento das colunas
     })),
   };
 
@@ -58,7 +58,7 @@ const Comparativo: FC<ComparativoProps> = ({ moedas }) => {
     },
     scales: {
       x: {
-        stacked: true,
+        stacked: false,
       },
       y: {
         beginAtZero: true,
