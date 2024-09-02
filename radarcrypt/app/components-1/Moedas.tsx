@@ -19,7 +19,7 @@ import
   ChartTooltip,
   ChartContainer
   } from "@/components/ui/chart";
-import { Indicator } from "@radix-ui/react-navigation-menu";
+
 
 
 interface GraficosProps {
@@ -78,6 +78,20 @@ const Graficos: FC<GraficosProps> = ({ nome, historico }) => {
           </AreaChart>
         </ChartContainer>
       </CardContent>
+
+      <CardFooter>
+        <div className="flex w-full items-start gap-2 text-sm">
+          <div className="grid gap-2">
+            <div className="flex items-center gap-2 front-mediunm leading-none">
+              Tendência alta para {nome} <TrendingUp className="h-4 w-4" />
+            </div>
+            <div className="flex items-center gap-2 leading-none text-muted-foreground">
+              Últimos {historico.length} dias
+            </div>
+          </div>
+        </div>
+      </CardFooter>
+
     </Card>
   )
 };
