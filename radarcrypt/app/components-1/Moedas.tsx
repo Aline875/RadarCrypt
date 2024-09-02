@@ -1,56 +1,85 @@
 "use client"
 import { FC } from "react";
-import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import {Area, AreaChart, CartesianGrid,XAxis} from "recharts";
+import {TrendingUp} from "lucide-react";
 
-// Registro dos componentes necessários do Chart.js
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+import
+{
+  Card, 
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import 
+{
+  ChartConfig, 
+  ChartTooltipContent,
+  ChartTooltip,
+  ChartContainer
+  } from "@/components/ui/chart";
+import { Indicator } from "@radix-ui/react-navigation-menu";
+
 
 interface GraficosProps {
   nome: string;
   historico: number[];
 }
 
+const chartConfig = 
+{
+  historico: 
+  {
+    label: "hitórico",
+    color: "hsl:(var(--chart-1))",
+  }
+} satisfies ChartConfig;
+
 const Graficos: FC<GraficosProps> = ({ nome, historico }) => {
-  // Configuração dos dados para o gráfico
-  const data = {
-    labels: historico.map((_, index) => `Dia ${index + 1}`), // Usando índices como dias
-    datasets: [
-      {
-        label: `Histórico de ${nome}`,
-        data: historico,
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-        tension: 0.3,
-      },
-    ],
-  };
+  const chartData = historico.map((valor, index) => ({
+  dia: `Dia ${index + 1}`,
+  valor,
+  }));
 
-  // Configuração das opções para o gráfico
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: `Evolução do Valor - ${nome}`,
-      },
-    },
-  };
-
-  return <Line data={data} options={options} />;
+  return(
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          Gráfico de Área - Histórico
+        </CardTitle>
+        <CardDescription>
+          Evolução de valor de {nome} nos últimos  dias
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ChartContainer config = {chartConfig}>
+          <AreaChart 
+          accessibilityLayer
+          data={chartData}
+          margin={{left:12, right: 12,  top:12}}>
+            <CartesianGrid vertical={false}/>
+            <XAxis 
+            dataKey="Dia"
+            tickLine={false}
+            axisLine={false}
+            tickMargin={8}
+            />
+            <ChartTooltip 
+            cursor ={false}
+            content = { <ChartTooltipContent indicator = "line" />}
+            />
+            <Area
+            dataKey = "valor"
+            type = "natural"
+            fill = "var(--color-historico)"
+            stackId = "a" 
+            />
+          </AreaChart>
+        </ChartContainer>
+      </CardContent>
+    </Card>
+  )
 };
 
-export default Graficos;
+export default Graficos;  

@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Graficos from "./components-1/Moedas";
 import Comparativo from "./components-1/Comparacao";
-import Sidebar from "./components-1/BarraLateral";
 import Header from "./components-1/Header";
 
 const Home: FC = () => {
@@ -13,7 +12,7 @@ const Home: FC = () => {
 
   return (
     <div className="flex">
-      <Sidebar />
+      
       <div className="flex-1 ml-64 mt-16 bg-custom-light dark:bg-gray-900">
         <Header />
         <div className="flex flex-col items-center justify-center min-h-screen bg-custom-light dark:bg-gray-900">
