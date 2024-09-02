@@ -34,6 +34,7 @@ const chartConfig =
     label: "hitórico",
     color: "hsl:(var(--chart-1))",
   }
+
 } satisfies ChartConfig;
 
 const Graficos: FC<GraficosProps> = ({ nome, historico }) => {
@@ -72,7 +73,7 @@ const Graficos: FC<GraficosProps> = ({ nome, historico }) => {
             <Area
             dataKey = "valor"
             type = "natural"
-            fill = "var(--color-historico)"
+            fill = "hsl(var(--chart-1))"
             stackId = "a" 
             />
           </AreaChart>

@@ -89,7 +89,7 @@ const Comparativo: FC <ComparativoProps> = ({moedas}) =>
                 <stop
                 offset="5%"
                 stopColor={`hsl(var(--chart-${i + 1}))`}
-                stopOpacity={0.1}
+                stopOpacity={0.4}
                 />
                 </linearGradient>
               ))}
