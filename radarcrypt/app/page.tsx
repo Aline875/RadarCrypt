@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Graficos from "./components/Moedas";
-import Comparativo from "./components/Comparacao";
-import Sidebar from "./components/BarraLateral";
-import Header from "./components/Header";
+import Graficos from "./components-1/Moedas";
+import Comparativo from "./components-1/Comparacao";
+import Sidebar from "./components-1/BarraLateral";
+import Header from "./components-1/Header";
 
 const Home: FC = () => {
   const moedas = [
@@ -30,6 +30,7 @@ const Home: FC = () => {
             <Comparativo moedas={moedas} />
           </div>
         </div>
+        
       </div>
     </div>
   );
