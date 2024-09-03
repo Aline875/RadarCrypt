@@ -11,14 +11,13 @@ const Home: FC = () => {
   ];
 
   return (
-    <div className="flex">
-      
-      <div className="flex-1 ml-64 mt-16 bg-custom-light dark:bg-gray-900">
+    <div className="flex min-h-screen dark:bg-gray-700">
+      <div className="flex-1 mt-16">
         <Header />
-        <div className="flex flex-col items-center justify-center min-h-screen bg-custom-light dark:bg-gray-900">
+        <div className="flex flex-col items-center justify-center">
           <main className="flex flex-wrap justify-center gap-6 p-4">
             {moedas.map((moeda, index) => (
-              <div key={index} className="border rounded-lg bg-white dark:bg-gray-800 p-4 shadow-md w-80 text-center mt-4">
+              <div key={index} className="border rounded-lg bg-white dark:bg-gray-700 p-4 shadow-md w-80 text-center mt-4">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-300">{moeda.nome}</h2>
                 <p className="text-lg text-gray-700 mb-4 dark:text-gray-400">Valor atual: {moeda.valor}</p>
                 <Graficos nome={moeda.nome} historico={moeda.historico} />
@@ -29,7 +28,6 @@ const Home: FC = () => {
             <Comparativo moedas={moedas} />
           </div>
         </div>
-        
       </div>
     </div>
   );

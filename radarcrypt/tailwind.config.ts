@@ -6,7 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: ['class', "class"], // Ativa o dark mode
+  darkMode: ['class'], // Ativa o dark mode
   theme: {
   	extend: {
   		backgroundImage: {
@@ -17,7 +17,7 @@ const config: Config = {
   			'custom-light': '#f1f5ff',
   			'font-color': '#171717',
   			'custom-button': '#1c58f4',
-  			'cusotm-gray': '#86878b',
+  			'custom-gray': '#86878b',
   			'dark-background': '#171717',
   			'dark-font': '#f1f5ff',
   			background: 'hsl(var(--background))',

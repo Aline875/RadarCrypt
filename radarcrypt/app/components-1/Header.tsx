@@ -19,17 +19,17 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const Header: FC = () => {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-20 h-16 bg-white shadow-md dark:bg-gray-700">
-      <div className="flex items-center justify-between h-full px-4">
+      <div className="flex items-center justify-between h-full px-4 bg-white dark:bg-slate-700">
         <NavigationMenu>
-          <NavigationMenuList className="flex items-center space-x-2">
+          <NavigationMenuList className="flex items-center space-x-2 text-slate-800 dark:text-white">
             <NavigationMenuItem>
               <NavigationMenuLink href="/" className="flex items-center space-x-2">
                 <img src="Logo.svg" alt="Logo do RadarCrypt" className="h-10" />
-                <span className="font-bold text-lg">RadarCrypt</span>
+                <span className="font-bold text-lg dark:text-white">RadarCrypt</span>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
@@ -38,23 +38,23 @@ const Header: FC = () => {
                 <Input placeholder="Pesquisa" className="ml-4" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="m-4">
+                <NavigationMenuLink href="/" className="m-4 dark:text-white">
                   Home
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/">Sobre nós</NavigationMenuLink>
+                <NavigationMenuLink href="/" className="dark:text-white">Sobre nós</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/">Contato</NavigationMenuLink>
+                <NavigationMenuLink href="/" className="dark:text-white">Contato</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="hover:text-indigo-700">
+                <NavigationMenuLink href="/" className="hover:text-indigo-700 dark:hover:text-indigo-400">
                   Log In
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="hover:text-indigo-700">
+                <NavigationMenuLink href="/" className="hover:text-indigo-700 dark:hover:text-indigo-400">
                   Log Out
                 </NavigationMenuLink>
               </NavigationMenuItem>

@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 const RootLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <head />
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
