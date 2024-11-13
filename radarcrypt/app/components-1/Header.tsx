@@ -17,6 +17,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import Image from 'next/image'
+import Link from 'next/link';
 
 const Header: FC = () => {
   const { setTheme, theme } = useTheme();
@@ -27,10 +29,18 @@ const Header: FC = () => {
         <NavigationMenu>
           <NavigationMenuList className="flex items-center space-x-2 text-slate-800 dark:text-white">
             <NavigationMenuItem>
-              <NavigationMenuLink href="/" className="flex items-center space-x-2">
-                <img src="Logo.svg" alt="Logo do RadarCrypt" className="h-10" />
-                <span className="font-bold text-lg dark:text-white">RadarCrypt</span>
-              </NavigationMenuLink>
+              <Link href="/" passHref>
+                <NavigationMenuLink className="flex items-center space-x-2">
+                  <Image
+                    src="/logo.svg"
+                    alt="Logo do RadarCrypt"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10"
+                  />
+                  <span className="font-bold text-lg dark:text-white">RadarCrypt</span>
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
 
             <div className="hidden md:flex items-center space-x-4 m-4">
@@ -38,25 +48,33 @@ const Header: FC = () => {
                 <Input placeholder="Pesquisa" className="ml-4" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="m-4 dark:text-white">
-                  Home
-                </NavigationMenuLink>
+                <Link href="/" passHref>
+                  <NavigationMenuLink className="m-4 dark:text-white">Home</NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="dark:text-white">Sobre nós</NavigationMenuLink>
+                <Link href="/about" passHref>
+                  <NavigationMenuLink className="dark:text-white">Sobre nós</NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="dark:text-white">Contato</NavigationMenuLink>
+                <Link href="/contact" passHref>
+                  <NavigationMenuLink className="dark:text-white">Contato</NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="hover:text-indigo-700 dark:hover:text-indigo-400">
-                  Log In
-                </NavigationMenuLink>
+                <Link href="/login" passHref>
+                  <NavigationMenuLink className="hover:text-indigo-700 dark:hover:text-indigo-400">
+                    Log In
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/" className="hover:text-indigo-700 dark:hover:text-indigo-400">
-                  Log Out
-                </NavigationMenuLink>
+                <Link href="/logout" passHref>
+                  <NavigationMenuLink className="hover:text-indigo-700 dark:hover:text-indigo-400">
+                    Log Out
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
             </div>
           </NavigationMenuList>
