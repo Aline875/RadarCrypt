@@ -15,6 +15,7 @@ const RootLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body className={inter.className}>
+      <link rel="manifest" href="/manifest.json" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
